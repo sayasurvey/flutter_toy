@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'time_line/time_line_page.dart';
+import 'view/time_line/time_line_page.dart';
 
 void main() {
   runApp(const MyApp());

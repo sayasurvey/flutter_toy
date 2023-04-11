@@ -40,7 +40,10 @@ class _TimeLinePageState extends State<TimeLinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('タイムライン'),
+        centerTitle: true,
+        title: const Text('タイムライン', style: TextStyle(color: Colors.black),),
+        backgroundColor: Theme.of(context).canvasColor,
+        elevation: 2,
       ),
       body: const Center(child: Text('タイムライン')),
     );

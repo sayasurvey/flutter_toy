@@ -45,7 +45,19 @@ class _TimeLinePageState extends State<TimeLinePage> {
         backgroundColor: Theme.of(context).canvasColor,
         elevation: 2,
       ),
-      body: const Center(child: Text('タイムライン')),
+      body: ListView.builder(
+        itemCount: postList.length,
+        itemBuilder: (context, index){
+          return Row(
+            children: [
+              CircleAvatar(
+                radius: 22,
+                foregroundImage: NetworkImage(myAccount.imagePath),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

@@ -19,12 +19,30 @@ class _TimeLinePageState extends State<TimeLinePage> {
     imagePath: 'https://assets.st-note.com/production/uploads/images/58075596/profile_7d12166cbb91dd3ff25bbed3898bdd76.png?width=2000&height=2000&fit=bounds&format=jpg&quality=85',
     createdTime: DateTime.now(),
     updatedTime: DateTime.now()
-  )
+  );
+
+  List<Post> postList = [
+    Post(
+      id: '1',
+      content:  '初めまして',
+      postAccountId: '1',
+      createdTime: DateTime.now()
+    ),
+    Post(
+      id: '2',
+      content:  '初めまして',
+      postAccountId: '1',
+      createdTime: DateTime.now()
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('タイムライン')),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('タイムライン'),
+      ),
+      body: const Center(child: Text('タイムライン')),
     );
   }
 }

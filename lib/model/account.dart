@@ -9,6 +9,6 @@ class Account {
 
   Account({
     this.id = '', this.name = '', this.imagePath = '', this.selfIntroduction = '',
-    this.userId = '', this.createdTime, this,updatedTime
-  })
+    this.userId = '', this.createdTime, this.updatedTime
+  });
 }

@@ -55,17 +55,26 @@ class _TimeLinePageState extends State<TimeLinePage> {
                 radius: 22,
                 foregroundImage: NetworkImage(myAccount.imagePath),
               ),
-              Column(
-                children: [
-                  Row(
+              Expanded(
+                child: Container(
+                  child: Column(
                     children: [
-                      Text(myAccount.name, style: const TextStyle(fontWeight: FontWeight.bold)),
-                      Text('@${myAccount.userId}', style: const TextStyle(color: Colors.grey),),
-                      //ここのindexはitemBuilder: (context, index)のindex ここには何件目のデータかが入る
-                    Text(DateFormat('M/d/yy').format(postList[index].createdTime!))//!はnullは絶対ないという意味
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Text(myAccount.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                              Text('@${myAccount.userId}', style: const TextStyle(color: Colors.grey),),
+                            ],
+                          ),
+                          //ここのindexはitemBuilder: (context, index)のindex ここには何件目のデータかが入る
+                          Text(DateFormat('M/d/yy').format(postList[index].createdTime!))//!はnullは絶対ないという意味
+                        ],
+                      )
                     ],
-                  )
-                ],
+                  ),
+                ),
               )
             ],
           );

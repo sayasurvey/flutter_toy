@@ -18,6 +18,23 @@ class _PostPageState extends State<PostPage> {
         elevation: 2,
         iconTheme: const IconThemeData(color: Colors.black),
         ),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const TextField(
+
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: () {
+
+                  },
+                  child: const Text('投稿'),
+              )
+            ],
+          ),
+        )
     );
   }
 }

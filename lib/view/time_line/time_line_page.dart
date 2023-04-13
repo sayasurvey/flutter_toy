@@ -31,7 +31,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
     ),
     Post(
       id: '2',
-      content:  '初めまして',
+      content:  '初めまして2回目',
       postAccountId: '1',
       createdTime: DateTime.now()
     )
@@ -49,34 +49,44 @@ class _TimeLinePageState extends State<TimeLinePage> {
       body: ListView.builder(
         itemCount: postList.length,
         itemBuilder: (context, index){
-          return Row(
-            children: [
-              CircleAvatar(
-                radius: 22,
-                foregroundImage: NetworkImage(myAccount.imagePath),
-              ),
-              Expanded(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Text(myAccount.name, style: const TextStyle(fontWeight: FontWeight.bold)),
-                              Text('@${myAccount.userId}', style: const TextStyle(color: Colors.grey),),
-                            ],
-                          ),
-                          //ここのindexはitemBuilder: (context, index)のindex ここには何件目のデータかが入る
-                          Text(DateFormat('M/d/yy').format(postList[index].createdTime!))//!はnullは絶対ないという意味
-                        ],
-                      )
-                    ],
-                  ),
+          return Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            decoration: BoxDecoration(
+              border: index == 0 ? const Border(
+                top: BorderSide(color: Colors.grey, width: 0),
+                bottom: BorderSide(color: Colors.grey, width: 0),
+              ) : const Border(bottom: BorderSide(color: Colors.grey, width: 0))
+            ),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 22,
+                  foregroundImage: NetworkImage(myAccount.imagePath),
                 ),
-              )
-            ],
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(myAccount.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                                Text('@${myAccount.userId}', style: const TextStyle(color: Colors.grey),),
+                              ],
+                            ),
+                            Text(DateFormat('M/d/yy').format(postList[index].createdTime!))
+                          ],
+                        ),
+                        Text(postList[index].content)
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           );
         },
       ),

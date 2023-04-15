@@ -8,6 +8,7 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
+  TextEditingController contentController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +23,8 @@ class _PostPageState extends State<PostPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const TextField(
-
+              TextField(
+                controller: contentController
               ),
               const SizedBox(height: 20),
               ElevatedButton(

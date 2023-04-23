@@ -13,11 +13,11 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        centerTitle: true,
-        title: const Text('新規投稿', style: TextStyle(color: Colors.black),),
-        backgroundColor: Theme.of(context).canvasColor,
-        elevation: 2,
-        iconTheme: const IconThemeData(color: Colors.black),
+          centerTitle: true,
+          title: const Text('新規投稿', style: TextStyle(color: Colors.black),),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 2,
+          iconTheme: const IconThemeData(color: Colors.black),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),

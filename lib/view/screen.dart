@@ -28,18 +28,18 @@ class _ScreenState extends State<Screen> {
               label: ' '
           )
         ],
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const PostPage()));
-            },
-            child: const Icon(Icons.chat_bubble_outline)//右下に吹き出しアイコンの丸いボタンが作成される
-        ),
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
             selectedIndex = index;
           });
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const PostPage()));
+          },
+          child: const Icon(Icons.chat_bubble_outline)//右下に吹き出しアイコンの丸いボタンが作成される
       ),
     );
   }

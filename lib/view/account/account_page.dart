@@ -10,6 +10,17 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+        body: SafeArea( //時刻や通知などの範囲にColumnがかからないようにする
+          child: Column(
+            children: [
+              Container(
+                  color: Colors.red,
+                  height: 200
+              ),
+            ],
+          ),
+        )
+    );
   }
 }

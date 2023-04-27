@@ -43,9 +43,10 @@ class _AccountPageState extends State<AccountPage> {
           child: Column(
             children: [
               Container(
-                  color: Colors.red.withOpacity(0.3),
+                  padding: const EdgeInsets.only(right: 15, left: 15, top: 20), //左右と上にだけ余白を設定する
                   height: 200,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween, //アカウント情報と編集ボタンを両橋に寄せる
@@ -71,10 +72,22 @@ class _AccountPageState extends State<AccountPage> {
                             },
                             child: const Text('編集'))
                         ],
-                      )
+                      ),
+                      const SizedBox(height: 15),
+                      Text(myAccount.selfIntroduction)
                     ],
                   )
               ),
+              Container(
+                alignment: Alignment.center, //投稿の文字を中央に配置
+                width: double.infinity, //横幅いっぱいに表示
+                decoration: const BoxDecoration( //Containerの見た目を整える
+                  border: Border(bottom: BorderSide( //下線を表示
+                    color: Colors.blue, width: 3 //色と太さを指定
+                  ))
+                ),
+                child: const Text('投稿', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),//投稿の文字を青く太字にする
+              )
             ],
           ),
         )

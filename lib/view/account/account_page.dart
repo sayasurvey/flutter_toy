@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../model/account.dart';
 import '../../model/post.dart';
@@ -87,6 +88,46 @@ class _AccountPageState extends State<AccountPage> {
                   ))
                 ),
                 child: const Text('投稿', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),//投稿の文字を青く太字にする
+              ),
+              Expanded(child: ListView.builder(
+                itemCount: ,
+                itemBuilder: (context, index){
+                  return Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                    decoration: BoxDecoration(
+                        border: index == 0 ? const Border(
+                          top: BorderSide(color: Colors.grey, width: 0),
+                          bottom: BorderSide(color: Colors.grey, width: 0),
+                        ) : const Border(bottom: BorderSide(color: Colors.grey, width: 0))
+                    ),
+                    child: Row(
+                      children: [
+                      CircleAvatar(
+                      radius: 22,
+                      foregroundImage: NetworkImage(myAccount.imagePath),
+                    ),
+                    Expanded(
+                    child: Container(
+                    child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Text(myAccount.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                              Text('@${myAccount.userId}', style: const TextStyle(color: Colors.grey),),
+                            ],
+                          ),
+                          Text(DateFormat('M/d/yy').format(postList[index].createdTime!))
+                        ],
+                      ),
+                      Text(postList[index].content)
+                    ],
+                  ),
+                  );
+                })
               )
             ],
           ),
